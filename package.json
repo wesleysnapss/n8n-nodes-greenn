@@ -1,0 +1,52 @@
+{
+	"name": "n8n-nodes-greenn",
+	"version": "1.0.0",
+	"description": "n8n node para integração com a API da Greenn",
+	"keywords": [
+		"n8n-community-node-package",
+		"greenn",
+		"n8n-node"
+	],
+	"license": "MIT",
+	"homepage": "https://github.com/seu-usuario/n8n-nodes-greenn",
+	"author": {
+		"name": "Seu Nome",
+		"email": "seu@email.com"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/seu-usuario/n8n-nodes-greenn.git"
+	},
+	"main": "index.js",
+	"scripts": {
+		"build": "tsc && gulp build:icons",
+		"dev": "tsc --watch",
+		"format": "prettier --write .",
+		"lint": "eslint nodes credentials --ext .ts",
+		"lintfix": "eslint nodes credentials --ext .ts --fix",
+		"prepublishOnly": "npm run build && npm run lint -s"
+	},
+	"files": [
+		"dist"
+	],
+	"n8n": {
+		"n8nNodesApiVersion": 1,
+		"nodes": [
+			"dist/nodes/Greenn/Greenn.node.js"
+		],
+		"credentials": [
+			"dist/credentials/GreennApi.credentials.js"
+		]
+	},
+	"peerDependencies": {
+		"n8n-workflow": "*"
+	},
+	"devDependencies": {
+		"@typescript-eslint/parser": "~5.45.0",
+		"eslint-plugin-n8n-nodes-base": "~1.11.0",
+		"gulp": "^4.0.2",
+		"n8n-workflow": "*",
+		"prettier": "^2.7.1",
+		"typescript": "~4.8.4"
+	}
+}
